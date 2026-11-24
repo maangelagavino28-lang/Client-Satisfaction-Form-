@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinic Client Satisfaction Form</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eaf5f1;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 850px;
+    width: 100%;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header .emoji {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    color: #238b70;
+    margin-bottom: 8px;
+    font-size: 27px;
+}
+
+.header p {
+    color: #777;
+    font-size: 14px;
+}
+
+h2 {
+    color: #238b70;
+    margin: 20px 0 10px;
+}
+
+.instruction {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 580px;
+}
+
+th, td {
+    border: 1px solid #dce9e4;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+th {
+    background: #238b70;
+    color: white;
+}
+
+td:first-child {
+    text-align: left;
+    font-weight: bold;
+    width: 45%;
+}
+
+tr:nth-child(even) {
+    background: #f4faf7;
+}
+
+/* CHECKBOX STYLE */
+input[type="radio"] {
+    appearance: none;
+    width: 21px;
+    height: 21px;
+    border: 2px solid #238b70;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+}
+
+input[type="radio"]:checked {
+    background: #238b70;
+    border-color: #238b70;
+}
+
+input[type="radio"]:checked::after {
+    content: "✓";
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    top: -1px;
+    left: 3px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background: #238b70;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #176b55;
+}
+
+.success-message {
+    display: none;
+    background: #e2f5e9;
+    color: #176b55;
+    text-align: center;
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.footer {
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+@media(max-width: 600px) {
+    .container {
+        padding: 18px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="emoji">🏥</div>
+        <h1>Medisync<h1/>
+        <h1>Client Satisfaction Form</h1>
+        <p>Your feedback helps us improve our clinic services.</p>
+        <div class="emoji">💚</div>
+    </div>
+
+    <hr>
+
+    <h2>📋 Evaluation Form</h2>
+
+    <p class="instruction">
+        Please check (✓) the box that best represents your evaluation.
+    </p>
+
+    <form id="satisfactionForm">
+
+        <div class="table-wrapper">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Evaluation Questions</th>
+                    <th>🌟 Excellent</th>
+                    <th>😊 Good</th>
+                    <th>😐 Fair</th>
+                    <th>🙁 Poor</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>🩺 1. How would you rate the overall Examination?</td>
+                    <td><input type="radio" name="q1" value="Excellent" required></td>
+                    <td><input type="radio" name="q1" value="Good"></td>
+                    <td><input type="radio" name="q1" value="Fair"></td>
+                    <td><input type="radio" name="q1" value="Poor"></td>
+                </tr>
+
+                <tr>
+                    <td>💬 2. Was the explanation easy to understand?</td>
+                    <td><input type="radio" name="q2" value="Excellent" required></td>
+                    <td><input type="radio" name="q2" value="Good"></td>
+                    <td><input type="radio" name="q2" value="Fair"></td>
+                    <td><input type="radio" name="q2" value="Poor"></td>
+                </tr>
+
+                <tr>
+                    <td>📄 3. Was the information useful?</td>
+                    <td><input type="radio" name="q3" value="Excellent" required></td>
+                    <td><input type="radio" name="q3" value="Good"></td>
+                    <td><input type="radio" name="q3" value="Fair"></td>
+                    <td><input type="radio" name="q3" value="Poor"></td>
+                </tr>
+
+                <tr>
+                    <td>👩‍⚕️ 4. How was the Doctor / Nurse?</td>
+                    <td><input type="radio" name="q4" value="Excellent" required></td>
+                    <td><input type="radio" name="q4" value="Good"></td>
+                    <td><input type="radio" name="q4" value="Fair"></td>
+                    <td><input type="radio" name="q4" value="Poor"></td>
+                </tr>
+
+                <tr>
+                    <td>💚 5. Overall, how satisfied are you?</td>
+                    <td><input type="radio" name="q5" value="Excellent" required></td>
+                    <td><input type="radio" name="q5" value="Good"></td>
+                    <td><input type="radio" name="q5" value="Fair"></td>
+                    <td><input type="radio" name="q5" value="Poor"></td>
+                </tr>
+
+            </tbody>
+        </table>
+        </div>
+
+        <button type="submit" class="submit-btn">
+            📨 Submit Evaluation
+        </button>
+
+    </form>
+
+    <div class="success-message" id="successMessage">
+        <h3>✅ Thank You!</h3>
+        <p>Your evaluation has been submitted successfully.</p>
+    </div>
+
+    <div class="footer">
+        Thank you for choosing our clinic! 💚
+    </div>
+
+</div>
+
+<script>
+document.getElementById("satisfactionForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    const evaluation = {};
+
+    for (let i = 1; i <= 5; i++) {
+        evaluation["Question " + i] =
+            formData.get("q" + i);
+    }
+
+    console.log("Client Evaluation:", evaluation);
+
+    document.getElementById("successMessage").style.display = "block";
+
+    this.reset();
+
+    document.getElementById("successMessage")
+    .scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+</script>
+
+</body>
+</html>
