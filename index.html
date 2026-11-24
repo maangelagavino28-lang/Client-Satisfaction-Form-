@@ -67,7 +67,7 @@ h2 {
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 580px;
+    min-width: 680px;
 }
 
 th, td {
@@ -84,7 +84,7 @@ th {
 td:first-child {
     text-align: left;
     font-weight: bold;
-    width: 45%;
+    width: 40%;
 }
 
 tr:nth-child(even) {
@@ -116,6 +116,39 @@ input[type="radio"]:checked::after {
     position: absolute;
     top: -1px;
     left: 3px;
+}
+
+/* BOTTOM INPUT BOXES */
+.feedback-section {
+    margin-top: 30px;
+}
+
+.feedback-section label {
+    display: block;
+    font-weight: bold;
+    color: #238b70;
+    margin-bottom: 10px;
+}
+
+.feedback-section textarea,
+.feedback-section input[type="email"] {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbded6;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.feedback-section textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.feedback-section textarea:focus,
+.feedback-section input[type="email"]:focus {
+    border-color: #238b70;
 }
 
 .submit-btn {
@@ -171,7 +204,6 @@ input[type="radio"]:checked::after {
     <!-- HEADER -->
     <div class="header">
         <div class="emoji">🏥</div>
-        <h1>Medisync<h1/>
         <h1>Client Satisfaction Form</h1>
         <p>Your feedback helps us improve our clinic services.</p>
         <div class="emoji">💚</div>
@@ -189,7 +221,6 @@ input[type="radio"]:checked::after {
 
         <div class="table-wrapper">
         <table>
-
             <thead>
                 <tr>
                     <th>Evaluation Questions</th>
@@ -197,53 +228,112 @@ input[type="radio"]:checked::after {
                     <th>😊 Good</th>
                     <th>😐 Fair</th>
                     <th>🙁 Poor</th>
+                    <th>N/A 
+                           Not Applicable</th>  
+            
                 </tr>
             </thead>
 
             <tbody>
-
                 <tr>
-                    <td>🩺 1. How would you rate the overall Examination?</td>
+                    <td>1. I am satisfied with the service I availed.</td>
                     <td><input type="radio" name="q1" value="Excellent" required></td>
                     <td><input type="radio" name="q1" value="Good"></td>
                     <td><input type="radio" name="q1" value="Fair"></td>
                     <td><input type="radio" name="q1" value="Poor"></td>
+                    <td><input type="radio" name="q1" value="N/A"></td>
                 </tr>
 
                 <tr>
-                    <td>💬 2. Was the explanation easy to understand?</td>
+                    <td>2. I spent a reasonable amount of time for my transaction.</td>
                     <td><input type="radio" name="q2" value="Excellent" required></td>
                     <td><input type="radio" name="q2" value="Good"></td>
                     <td><input type="radio" name="q2" value="Fair"></td>
                     <td><input type="radio" name="q2" value="Poor"></td>
+                    <td><input type="radio" name="q2" value="N/A"></td>
                 </tr>
 
                 <tr>
-                    <td>📄 3. Was the information useful?</td>
+                    <td>3. The steps (including payment) I needed to do for my transaction were easy and simple.</td>
                     <td><input type="radio" name="q3" value="Excellent" required></td>
                     <td><input type="radio" name="q3" value="Good"></td>
                     <td><input type="radio" name="q3" value="Fair"></td>
                     <td><input type="radio" name="q3" value="Poor"></td>
+                    <td><input type="radio" name="q3" value="N/A"></td>
                 </tr>
 
                 <tr>
-                    <td>👩‍⚕️ 4. How was the Doctor / Nurse?</td>
+                    <td>4. I easily found information about my transaction from the office or its website.</td>
                     <td><input type="radio" name="q4" value="Excellent" required></td>
                     <td><input type="radio" name="q4" value="Good"></td>
                     <td><input type="radio" name="q4" value="Fair"></td>
                     <td><input type="radio" name="q4" value="Poor"></td>
+                    <td><input type="radio" name="q4" value="N/A"></td>
                 </tr>
 
                 <tr>
-                    <td>💚 5. Overall, how satisfied are you?</td>
+                    <td>5. I paid a reasonable amount of fees for my transaction (if the service was free, mark N/A).</td>
                     <td><input type="radio" name="q5" value="Excellent" required></td>
                     <td><input type="radio" name="q5" value="Good"></td>
                     <td><input type="radio" name="q5" value="Fair"></td>
                     <td><input type="radio" name="q5" value="Poor"></td>
+                    <td><input type="radio" name="q5" value="N/A"></td>
                 </tr>
 
+                <tr>
+                    <td>6. I feel the office was fair to everyone during my transaction.</td>
+                    <td><input type="radio" name="q6" value="Excellent" required></td>
+                    <td><input type="radio" name="q6" value="Good"></td>
+                    <td><input type="radio" name="q6" value="Fair"></td>
+                    <td><input type="radio" name="q6" value="Poor"></td>
+                    <td><input type="radio" name="q6" value="N/A"></td>
+                </tr>
+
+                <tr>
+                    <td>7. I was treated courteously by the staff, and they were helpful when I asked for assistance.</td>
+                    <td><input type="radio" name="q7" value="Excellent" required></td>
+                    <td><input type="radio" name="q7" value="Good"></td>
+                    <td><input type="radio" name="q7" value="Fair"></td>
+                    <td><input type="radio" name="q7" value="Poor"></td>
+                    <td><input type="radio" name="q7" value="N/A"></td>
+                </tr>
+
+                <tr>
+                    <td>💚 8. I got what I needed from the clinic, or any denial of my request was sufficiently explained to me.</td>
+                    <td><input type="radio" name="q8" value="Excellent" required></td>
+                    <td><input type="radio" name="q8" value="Good"></td>
+                    <td><input type="radio" name="q8" value="Fair"></td>
+                    <td><input type="radio" name="q8" value="Poor"></td>
+                    <td><input type="radio" name="q8" value="N/A"></td>
+                </tr>
             </tbody>
         </table>
+        </div>
+
+        <!-- SUGGESTIONS AND EMAIL AT THE BOTTOM -->
+        <div class="feedback-section">
+
+            <label for="suggestions">
+                💡 Suggestions on how we can further improve our services (optional):
+            </label>
+
+            <textarea
+                id="suggestions"
+                name="suggestions"
+                placeholder="Enter your suggestions here..."
+            ></textarea>
+
+            <label for="email">
+                📧 Email address (optional):
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+            >
+
         </div>
 
         <button type="submit" class="submit-btn">
@@ -270,13 +360,14 @@ document.getElementById("satisfactionForm")
     event.preventDefault();
 
     const formData = new FormData(this);
-
     const evaluation = {};
 
-    for (let i = 1; i <= 5; i++) {
-        evaluation["Question " + i] =
-            formData.get("q" + i);
+    for (let i = 1; i <= 8; i++) {
+        evaluation["Question " + i] = formData.get("q" + i);
     }
+
+    evaluation["Suggestions"] = formData.get("suggestions");
+    evaluation["Email Address"] = formData.get("email");
 
     console.log("Client Evaluation:", evaluation);
 
